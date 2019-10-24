@@ -10,6 +10,13 @@ function adicionarAluno(){
     aluno.total = calcularTotal(aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4);
     aluno.media = calcularMedia(aluno.total);
     aluno.situacao = calcularSituacao(aluno.media);
+
+    
+    console.log($(":form").valid());
+    console.log($(":form").validate());
+
+    var form = $('#formAdicionaAluno');
+    console.log(form.validate);
     
     adicionarLinhaTabela(aluno);
 }
@@ -33,7 +40,7 @@ function calcularSituacao(media){
 
 function adicionarLinhaTabela(objeto){
     var tabela = document.querySelector('table');
-    var tr = tabela.insertRow();
+    var tr = tabela.insertRow(1);
     tr.innerHTML = '<td>'+objeto.nome+'</td>'+
                     "<td>"+objeto.nota1+'</td>'+
                     "<td>"+objeto.nota2+'</td>'+
@@ -42,4 +49,6 @@ function adicionarLinhaTabela(objeto){
                     "<td>"+objeto.total+'</td>'+
                     "<td>"+objeto.media+'</td>'+
                     "<td>"+objeto.situacao+'</td>';
+            
+            $(":input").val("");
 }

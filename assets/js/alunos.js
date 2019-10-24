@@ -2,7 +2,14 @@ var aluno = {};
 var listaAlunos = {};
 
 function adicionarAluno(){
-    aluno.nome = $("#nomeAluno").val();//com jquery
+
+    if ($("#nomeAluno").valid()) {
+        aluno.nome = $("#nomeAluno").val();
+    }else{
+        $("#nomeAluno").addClass("is-invalid");
+    }
+
+    //aluno.nome = $("#nomeAluno").val();//com jquery
     aluno.nota1 = parseInt($("#primeiroBim").val());//com jquery
     aluno.nota2 = parseInt($("#segundoBim").val());//com jquery
     aluno.nota3 = parseInt($("#terceiroBim").val());//com jquery
@@ -11,12 +18,10 @@ function adicionarAluno(){
     aluno.media = calcularMedia(aluno.total);
     aluno.situacao = calcularSituacao(aluno.media);
 
-    
-    console.log($(":form").valid());
-    console.log($(":form").validate());
+    console.log($("#nomeAluno").valid());
+    console.log($("#formAdicionaAluno").validate());
 
-    var form = $('#formAdicionaAluno');
-    console.log(form.validate);
+    $(":input").val("");
     
     adicionarLinhaTabela(aluno);
 }

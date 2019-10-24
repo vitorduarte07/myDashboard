@@ -9,14 +9,40 @@ function adicionarAluno(){
         $("#nomeAluno").addClass("is-invalid");
     }
 
+    if ($("#primeiroBim").valid()) {
+        aluno.nota1 = parseInt($("#primeiroBi").val());
+    }else{
+        $("#primeiroBim").addClass("is-invalid");
+    }
+
+    if ($("#segundoBim").valid()) {
+        aluno.nota2 = parseInt($("#segundoBi").val());
+    }else{
+        $("#segundoBim").addClass("is-invalid");
+    }
+
+    if ($("#terceiroBim").valid()) {
+        aluno.nota3 = parseInt($("#terceiroBi").val());
+    }else{
+        $("#terceiroBim").addClass("is-invalid");
+    }
+
+    if ($("#quartoBim").valid()) {
+        aluno.nota4 = parseInt($("#quartoBi").val());
+    }else{
+        $("#quartoBim").addClass("is-invalid");
+    }
+
+    
+
     //aluno.nome = $("#nomeAluno").val();//com jquery
-    aluno.nota1 = parseInt($("#primeiroBim").val());//com jquery
-    aluno.nota2 = parseInt($("#segundoBim").val());//com jquery
-    aluno.nota3 = parseInt($("#terceiroBim").val());//com jquery
-    aluno.nota4 = parseInt($("#quartoBim").val());//com jquery
-    aluno.total = calcularTotal(aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4);
-    aluno.media = calcularMedia(aluno.total);
-    aluno.situacao = calcularSituacao(aluno.media);
+    //aluno.nota1 = parseInt($("#primeiroBim").val());//com jquery
+    //aluno.nota2 = parseInt($("#segundoBim").val());//com jquery
+    //aluno.nota3 = parseInt($("#terceiroBim").val());//com jquery
+    //aluno.nota4 = parseInt($("#quartoBim").val());//com jquery
+    //aluno.total = calcularTotal(aluno.nota1, aluno.nota2, aluno.nota3, aluno.nota4);
+    //aluno.media = calcularMedia(aluno.total);
+    //aluno.situacao = calcularSituacao(aluno.media);
 
     console.log($("#nomeAluno").valid());
     console.log($("#formAdicionaAluno").validate());

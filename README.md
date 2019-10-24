@@ -1,2 +1,2 @@
 # myDashboard
-dashboard baseada no adminlte 3
+Dashboard baseada no AdminLte 3

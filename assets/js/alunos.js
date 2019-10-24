@@ -25,14 +25,21 @@ function calcularMedia(valor){
 function calcularSituacao(media){
     const MEDIA_APROVACAO = 7;
     if (media >= MEDIA_APROVACAO) {
-        return 'APROVADO';
+        return innerHTML = '<span class="badge badge-success">APROVADO</span>';
     }else{
-        return 'REPROVADO';
+        return '<span class="badge badge-danger">REPROVADO</span>';
     }
 }
 
 function adicionarLinhaTabela(objeto){
-    console.log(objeto);
-    var tabela = $('#listagemAlunos');
-    console.log(tabela);
+    var tabela = document.querySelector('table');
+    var tr = tabela.insertRow();
+    tr.innerHTML = '<td>'+objeto.nome+'</td>'+
+                    "<td>"+objeto.nota1+'</td>'+
+                    "<td>"+objeto.nota2+'</td>'+
+                    "<td>"+objeto.nota3+'</td>'+
+                    "<td>"+objeto.nota4+'</td>'+
+                    "<td>"+objeto.total+'</td>'+
+                    "<td>"+objeto.media+'</td>'+
+                    "<td>"+objeto.situacao+'</td>';
 }

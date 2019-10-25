@@ -25,6 +25,7 @@ function adicionarAluno() {
 
     if (formValido) {
         aluno.nome = $("#nomeAluno").val();
+        aluno.nota1 = parseInt($("#primeiroBi").val());
         aluno.nota2 = parseInt($("#segundoBi").val());
         aluno.nota3 = parseInt($("#terceiroBi").val());
         aluno.nota4 = parseInt($("#quartoBi").val());
@@ -72,10 +73,17 @@ function adicionarLinhaTabela(objeto) {
         "<td>" + objeto.media + "</td>" +
         "<td>" + objeto.situacao + "</td>"+
         "<td><button type='button' class='btn btn-danger' onclick='deletarLinha(this)'>X</button></td>";
+    toastr.success('Aluno incluido com sucesso !');
+        
+}
+
+function quantidadeAlunos(){
+    return aluno.nome ++;
 }
 
 function deletarLinha(linha) {
     var i = linha.parentNode.parentNode.rowIndex;
     document.querySelector('table').deleteRow(i);
     //document.getElementById('tableAlunos').deleteRow(index)
+    toastr.error('Registro excluido com sucesso !');
 }
